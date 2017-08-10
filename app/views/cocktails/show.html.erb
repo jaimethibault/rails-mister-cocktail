@@ -1,1 +1,8 @@
 <h1><%= @cocktail.name %></h1>
+<%= link_to 'back to all cocktails', cocktails_path, class: "btn btn-default btn-xs button-margin" %>
+<ul>
+  <% @cocktail.doses.each do |dose| %>
+    <li><%= dose.description %> - <%= dose.ingredient.name %> <%= link_to "Delete Dose", dose_path(dose), method: :delete %></li>
+  <% end %>
+</ul>
+<%= link_to 'create a new dose', new_cocktail_dose_path(@cocktail), class: "btn btn-danger btn-xs button-margin" %>
