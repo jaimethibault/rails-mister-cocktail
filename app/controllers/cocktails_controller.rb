@@ -17,6 +17,10 @@ class CocktailsController < ApplicationController
     end
   end
 
+  def show
+    @dose = Dose.new
+  end
+
   private
 
   def set_cocktail

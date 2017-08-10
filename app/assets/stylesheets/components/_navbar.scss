@@ -15,6 +15,18 @@
   height: 50px;
 }
 
+.navbar-wagon>ul {
+  display: flex;
+  align-items: center;
+  margin: 0px;
+}
+
+.navbar-wagon-brand>li {
+  display: inline-block;
+  padding-right: 5px;
+}
+
+
 /* User Avatar */
 .navbar-wagon .avatar {
   height: 35px;
@@ -41,7 +53,7 @@
   font-size: 14px;
 }
 .navbar-wagon-link:hover {
-  color: #da552f;
+  color: $red;
   text-decoration: none;
 }
 
