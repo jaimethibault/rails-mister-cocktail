@@ -5,3 +5,20 @@
     <%= render 'form' %>
   </div>
 </div>
+
+<% content_for(:js) do %>
+  <%= javascript_tag do %>
+    <!-- document.addEventListener("DOMContentLoaded", function(event) {
+      const oldbtn = document.getElementById("cocktail_photo");
+      const newbtn = document.getElementById("new-btn");
+      // add a listener on this new btn to simulate click on old btn
+      newbtn.addEventListener("click", (event) => {
+        event.preventDefault();
+        console.log('toto');
+        oldbtn.click();
+      });
+    }); -->
+  <% end %>
+<% end %>
+
+
