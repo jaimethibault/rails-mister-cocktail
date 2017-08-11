@@ -2,7 +2,23 @@
 <%= link_to 'create a new cocktail', new_cocktail_path, class: "btn btn-danger btn-xs button-margin" %>
 <ul class="list-unstyled">
   <% @cocktails.each do |cocktail| %>
-    <li><i class="fa fa-glass"></i> <%= link_to cocktail.name, cocktail_path(cocktail) %></li>
+    <div class="product">
+      <div class='product-upvote'>
+        <div class="product-arrow"></div>
+        <div class='product-count'><%= cocktail.id %></div>
+      </div>
+      <%= cl_image_tag cocktail.photo, height: 100, width: 150, crop: :fill, class: "product-image hidden-xs" %>
+      <div class='product-body'>
+        <h3><%= link_to cocktail.name, cocktail_path(cocktail) %></h3>
+      </div>
+      <ul class="list-inline product-controls hidden-sm hidden-xs">
+        <li><a href=""><i class="fa fa-heart"></i></a></li>
+        <li><a href=""><i class="fa fa-share"></i></a></li>
+        <li><a href=""><i class="fa fa-star"></i></a></li>
+      </ul>
+    </div>
   <% end %>
 </ul>
+
+
 <%= link_to 'create a new cocktail', new_cocktail_path, class: "btn btn-danger btn-xs button-margin" %>
