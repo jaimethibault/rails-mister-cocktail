@@ -1,5 +1,5 @@
 <%= simple_form_for [@cocktail, @dose] do |f| %>
   <%= f.input :description %>
-  <%= f.input :ingredient_id, collection: Ingredient.all, prompt: "Choose an Ingredient" %>
+  <%= f.input :ingredient_id, collection: Ingredient.all.sort_by{|i| i.name.downcase} , prompt: "Choose an Ingredient" %>
   <%= f.submit class: "btn btn-danger button-margin" %>
 <% end %>
