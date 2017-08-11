@@ -25,6 +25,7 @@ gem 'bootstrap-sass'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'autoprefixer-rails'
+gem 'figaro'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
