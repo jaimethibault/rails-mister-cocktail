@@ -1,26 +1,27 @@
 <h1><%= @cocktail.name %></h1>
-<%= link_to 'back to all cocktails', cocktails_path, class: "btn btn-info btn-xs button-margin" %>
-<h5>What you need</h5>
-<% if @cocktail.doses.length == 0 %>
-  <ul class="list-unstyled">
-    <li>No Dose yet, please add one</li>
-  </ul>
-<% else %>
-  <ul class="list-unstyled">
-    <% @cocktail.doses.each do |dose| %>
-      <li>
-        <i class="fa fa-circle-o icon-small" aria-hidden="true"></i> <%= dose.description %> - <%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %>
-            <i class="fa fa-trash icon-small" aria-hidden="true"></i>
-        <% end %>
-      </li>
-    <% end %>
-  </ul>
-<% end %>
-
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-xs-12 col-md-6">
+    <%= cl_image_tag @cocktail.photo, height: 350, width: 450, crop: :fill, id: "img-show" %>
+  </div>
+  <div class="col-xs-12 col-md-6">
+    <h5 id="h5-nomargintop">What you need</h5>
+    <% if @cocktail.doses.length == 0 %>
+      <ul class="list-unstyled">
+        <li>No Dose yet, please add one</li>
+      </ul>
+    <% else %>
+      <ul class="list-unstyled">
+        <% @cocktail.doses.each do |dose| %>
+          <li>
+            <i class="fa fa-circle-o icon-small" aria-hidden="true"></i> <%= dose.description %> - <%= dose.ingredient.name %> <%= link_to dose_path(dose), method: :delete do %>
+                <i class="fa fa-trash icon-small" aria-hidden="true"></i>
+            <% end %>
+          </li>
+        <% end %>
+      </ul>
+    <% end %>
     <h5>Create a new Dose</h5>
     <%= render 'doses/form' %>
   </div>
 </div>
-
+<%= link_to 'back to all cocktails', cocktails_path, class: "btn btn-info btn-xs button-margin" %>
